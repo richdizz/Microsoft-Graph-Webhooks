@@ -1,0 +1,22 @@
+{
+  "name": "ContactsWithWebhooks",
+  "description": "",
+  "main": "",
+  "authors": [
+    "richdizz <richdizz@outlook.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "socket.io-client": "^1.4.8"
+  }
+}

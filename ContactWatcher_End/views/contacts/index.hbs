@@ -1,0 +1,35 @@
+<h2>My Contacts</h2>
+<div class="row">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each contacts}}
+            <tr>
+                <td>{{givenName}}</td>
+                <td>{{surname}}</td>
+                <td>{{emailAddresses.[0].address}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+<form method="POST" target="contacts">
+    {{#unless connected}}
+    <input type="submit" name="btnConnect" value="Connect" class="btn btn-primary btn-block"/>
+    {{/unless}}
+    {{#if connected}}
+    <div class="alert alert-info" role="alert">Webhook subscription established and listening!!!</div>
+    <script type="text/javascript">
+        var socket = io();
+        socket.on('contactAdded', function (data) {
+            alert(data);
+        });
+    </script>
+    {{/if}}
+</form>
